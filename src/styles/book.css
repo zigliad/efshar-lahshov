@@ -36,8 +36,8 @@
 	width: 294px;
 	height: 416px;
 	transform: translateZ(20px);
-	background-color: #874efe;
-	border-radius: 0px 0 0 0px;
+	background-color: #5468d5;
+	border-radius: 0 0 0 0;
 	box-shadow: 5px 5px 20px #666;
 }
 
@@ -83,7 +83,7 @@
 	width: 294px;
 	height: 416px;
 	transform: translateZ(-20px);
-	background-color: #874efe;
-	border-radius: 0px 0 0 0px;
+	background-color: #5468d5;
+	border-radius: 0 0 0 0;
 	box-shadow: -10px 0 50px 10px #aaaaaa;
 }
