@@ -24,6 +24,12 @@
 	animation: 3s ease 0s 1 initAnimation;
 }
 
+@media (min-width: 600px) {
+	.book {
+		scale: 1.4;
+	}
+}
+
 .book-container:hover .book,
 .book-container:focus .book {
 	transform: rotateY(30deg);

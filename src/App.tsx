@@ -1,59 +1,38 @@
+import { OpeningWords } from "sections/opening-words/OpeningWords";
+
 import "@fontsource/inter";
-import Book from "./assets/book.png";
-import Logo from "./assets/logo.png";
-import Cover from "./assets/cover.png";
-import { Divider, Grid, Sheet, Typography } from "@mui/joy";
+
+import { Author } from "sections/about-the-author/Author";
+import { Book } from "sections/book/Book";
+import { Reviews } from "sections/reviews/Reviews";
 import "./styles/book.css";
+import "./styles/main.css";
 
 function App() {
 	return (
-		<div className="bg-gray-100 h-screen p-4">
-			<div className="flex flex-col items-center justify-center h-full w-full">
-				<Grid container spacing={2} className=" w-full">
-					<Grid xs={12} md={6}>
-						<div>
-							<Typography
-								textAlign={"right"}
-								level="h3"
-								textColor={"text.tertiary"}
-							>
-								ליעד זיגדון
-							</Typography>
-							<Typography
-								textAlign={"right"}
-								level="h1"
-								gutterBottom
-							>
-								צרו קשר / להזמנות
-							</Typography>
-							<Divider />
-							<Typography
-								textAlign={"right"}
-								level="h4"
-								gutterBottom
-								className="pt-4"
-							>
-								ווצאפ 0545200172
-							</Typography>
-						</div>
-					</Grid>
-					<Grid xs={12} md={6}>
-						<a
-							className="book-container"
-							href=""
-							target="_blank"
-							rel="noreferrer noopener"
-						>
-							<div className="book">
-								<img
-									alt="אפשרמלחשוב"
-									src={Cover}
-									className="cover-image"
-								/>
-							</div>
-						</a>
-					</Grid>
-				</Grid>
+		<div className="">
+			<div className="section-outer justify-center h-screen">
+				<div className="section-inner">
+					<Book />
+				</div>
+			</div>
+
+			<div className="section-outer">
+				<div className="section-inner">
+					<OpeningWords />
+				</div>
+			</div>
+
+			<div className="section-outer">
+				<div className="section-inner">
+					<Author />
+				</div>
+			</div>
+
+			<div className="section-outer">
+				<div className="section-inner">
+					<Reviews />
+				</div>
 			</div>
 		</div>
 	);

@@ -1,0 +1,28 @@
+.section-outer {
+	padding: 4rem;
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+}
+
+.section-inner {
+	max-width: 800px;
+}
+
+.section-outer:nth-of-type(even) {
+	background-color: white;
+}
+
+.section-outer:nth-of-type(odd) {
+	background-color: #f3f4f6;
+}
+
+@media (max-width: 600px) {
+	.section-outer {
+		padding: 2rem;
+	}
+
+	.section-inner {
+		width: 100%;
+	}
+}
