@@ -1,6 +1,6 @@
 import Cover from "assets/cover.png";
 
-export const Book = () => {
+export const BookCover = () => {
 	return (
 		<div className="book-container">
 			<div className="book">

@@ -1,14 +1,9 @@
-import { Avatar, Divider, Typography } from "@mui/joy";
-import React from "react";
-import Liad from "../../assets/liad.png";
-import {
-	faInstagram,
-	faLinkedin,
-	faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faSquarePhone } from "@fortawesome/free-solid-svg-icons";
+import { Avatar, Typography } from "@mui/joy";
+
+import Liad from "../../assets/liad.png";
 
 export const Author = () => {
 	return (
@@ -28,11 +23,12 @@ export const Author = () => {
 					textAlign={"right"}
 					fontSize={"1.15rem"}
 					gutterBottom
+					dir="rtl"
 				>
 					סרן בצה״ל, בעל תואר ראשון במדעי המחשב אותו סיים בגיל 18.
 					אוהב את משפחתו ואת חבריו. משחק כדורגל, טניס, מטקות ואוהד
 					מושבע של שלמה ארצי. מעל הכל, פותר ומחבר תשבצי היגיון וחסיד
-					גדול של משחקי מילים
+					גדול של משחקי מילים.
 				</Typography>
 				{/* <Divider /> */}
 				<div className="flex gap-6 my-4 flex-row-reverse">
