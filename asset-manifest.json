@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/efshar-lahshov/static/css/main.55cee830.css",
-    "main.js": "/efshar-lahshov/static/js/main.9d7bdc41.js",
+    "main.css": "/efshar-lahshov/static/css/main.ad3a82d5.css",
+    "main.js": "/efshar-lahshov/static/js/main.22957af0.js",
     "static/media/liad.png": "/efshar-lahshov/static/media/liad.3a8b5a5266ac91af0f7d.png",
     "static/media/cover.png": "/efshar-lahshov/static/media/cover.82a1c141209274a7a045.png",
     "static/media/inter-latin-ext-400-normal.woff": "/efshar-lahshov/static/media/inter-latin-ext-400-normal.1c20f7dc20d731a18fcd.woff",
@@ -19,11 +19,11 @@
     "static/media/inter-greek-ext-400-normal.woff2": "/efshar-lahshov/static/media/inter-greek-ext-400-normal.f2fa0d9ef98f59d4a75b.woff2",
     "static/media/inter-vietnamese-400-normal.woff2": "/efshar-lahshov/static/media/inter-vietnamese-400-normal.44c9df135eec470b0ab6.woff2",
     "index.html": "/efshar-lahshov/index.html",
-    "main.55cee830.css.map": "/efshar-lahshov/static/css/main.55cee830.css.map",
-    "main.9d7bdc41.js.map": "/efshar-lahshov/static/js/main.9d7bdc41.js.map"
+    "main.ad3a82d5.css.map": "/efshar-lahshov/static/css/main.ad3a82d5.css.map",
+    "main.22957af0.js.map": "/efshar-lahshov/static/js/main.22957af0.js.map"
   },
   "entrypoints": [
-    "static/css/main.55cee830.css",
-    "static/js/main.9d7bdc41.js"
+    "static/css/main.ad3a82d5.css",
+    "static/js/main.22957af0.js"
   ]
 }
