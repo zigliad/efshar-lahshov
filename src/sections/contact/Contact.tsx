@@ -5,7 +5,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Typography } from "@mui/joy";
+import { Divider, Typography } from "@mui/joy";
 import React, { PropsWithChildren } from "react";
 
 const Mailto = ({
@@ -79,10 +79,10 @@ export const Contact = () => {
 			<Typography textAlign={"right"} level="h1" gutterBottom>
 				צרו קשר
 			</Typography>
+			<ContactLinks />
 			<Typography textAlign={"right"} fontSize={"1.15rem"} dir="rtl">
 				אפשר לחשוב - ליעד זיגדון
 			</Typography>
-			<ContactLinks />
 		</div>
 	);
 };
