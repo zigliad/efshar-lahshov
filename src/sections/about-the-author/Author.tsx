@@ -1,9 +1,15 @@
-import { faInstagram, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import {
+	faInstagram,
+	faLinkedin,
+	faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar, Typography } from "@mui/joy";
 
 import Liad from "../../assets/liad.png";
+import { PropsWithChildren } from "react";
+import { ContactLinks } from "sections/contact/Contact";
 
 export const Author = () => {
 	return (
@@ -30,30 +36,7 @@ export const Author = () => {
 					מושבע של שלמה ארצי. מעל הכל, פותר ומחבר תשבצי היגיון וחסיד
 					גדול של משחקי מילים.
 				</Typography>
-				{/* <Divider /> */}
-				<div className="flex gap-6 my-4 flex-row-reverse">
-					<FontAwesomeIcon
-						icon={faInstagram}
-						size="2xl"
-						style={{ color: "#E1306C" }}
-					/>
-
-					<FontAwesomeIcon
-						icon={faLinkedin}
-						size="2xl"
-						style={{ color: "#0b63bc" }}
-					/>
-					<FontAwesomeIcon
-						icon={faWhatsapp}
-						size="2xl"
-						style={{ color: "#128C7E" }}
-					/>
-					<FontAwesomeIcon
-						icon={faEnvelope}
-						size="2xl"
-						style={{ color: "#f2870e" }}
-					/>
-				</div>
+				<ContactLinks />
 				<Typography
 					textAlign={"right"}
 					level="h4"

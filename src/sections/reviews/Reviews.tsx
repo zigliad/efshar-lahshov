@@ -77,7 +77,7 @@ export const Reviews = () => {
 				{reviews.map((review, index) => (
 					<div
 						key={index}
-						className="bg-gray-50 rounded-xl rounded-br-none p-4 block"
+						className="bg-white rounded-xl rounded-br-none p-4"
 					>
 						<Typography
 							textAlign={"right"}

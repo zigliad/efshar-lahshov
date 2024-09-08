@@ -7,6 +7,7 @@ import { Reviews } from "sections/reviews/Reviews";
 import "./styles/book.css";
 import "./styles/main.css";
 import "@fontsource/inter";
+import { Contact } from "sections/contact/Contact";
 
 function App() {
 	return (
@@ -38,6 +39,12 @@ function App() {
 			<div className="section-outer">
 				<div className="section-inner">
 					<Reviews />
+				</div>
+			</div>
+
+			<div className="section-outer">
+				<div className="section-inner">
+					<Contact />
 				</div>
 			</div>
 		</div>
