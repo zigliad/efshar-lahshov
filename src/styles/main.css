@@ -6,7 +6,7 @@
 }
 
 .section-inner {
-	max-width: 800px;
+	width: 800px;
 }
 
 .section-outer:nth-of-type(even) {
@@ -17,7 +17,7 @@
 	background-color: #f3f4f6;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 	.section-outer {
 		padding: 2rem;
 	}
