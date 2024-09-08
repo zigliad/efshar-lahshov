@@ -1,4 +1,5 @@
 import { Typography } from "@mui/joy";
+import { Masonry } from "@mui/lab";
 import React from "react";
 
 const reviews = [
@@ -28,15 +29,20 @@ const reviews = [
 	},
 	{
 		reviewer: "לאה ברוך",
-		message: "אתה מוכשר מאד בפירוק והרכבת מילים",
+		message: "אתה מוכשר מאד בפירוק והרכבת מילים. כיף לפתור, תמשיך כך!",
+	},
+	{
+		reviewer: "דפנה שטרן",
+		message: "תשבצים מעולים שכיף לפתור",
+	},
+	{
+		reviewer: "עמי מהל",
+		message: "תשבצים נפלאים, מאוד נהניתי!",
 	},
 ];
 
 // const moreReviews = [
-// 	{
-// 		reviewer: "דפנה שטרן",
-// 		message: "תשבצים מעולים שכיף לפתור",
-// 	},
+
 // 	{
 // 		reviewer: "שוש כהן",
 // 		message: "אחלה תשבצים, שנונים ומהנים! תודה",
@@ -49,11 +55,6 @@ const reviews = [
 // 		reviewer: "מיכל אמזלג",
 // 		message: "וואוו! מדהים, תודה רבה",
 // 	},
-// 	{
-// 		reviewer: "עמי מהל",
-// 		message: "תשבצים נפלאים, מאוד נהניתי!",
-// 	},
-
 // 	{
 // 		reviewer: "תהלה אלזס",
 // 		message: "ואו. הגדרות מעולות.",
@@ -74,7 +75,36 @@ export const Reviews = () => {
 				תגובות הפותרים והקוראים
 			</Typography>
 			<div className="space-y-4">
-				{reviews.map((review, index) => (
+				<Masonry
+					columns={{ xs: 1, md: 2, lg: 3 }}
+					spacing={3}
+					dir="rtl"
+					style={{ marginLeft: 12 }}
+				>
+					{reviews.map((review, index) => (
+						<div
+							key={index}
+							className="bg-white rounded-xl shadow-lg p-4"
+						>
+							<Typography
+								textAlign={"right"}
+								level="h4"
+								dir="rtl"
+								textColor={"#5468d5"}
+							>
+								{review.reviewer}
+							</Typography>
+							<Typography
+								textAlign={"right"}
+								fontSize={"1.15rem"}
+								dir="rtl"
+							>
+								{review.message}
+							</Typography>
+						</div>
+					))}
+				</Masonry>
+				{/* {reviews.map((review, index) => (
 					<div
 						key={index}
 						className="bg-white rounded-xl rounded-br-none p-4"
@@ -95,7 +125,7 @@ export const Reviews = () => {
 							{review.message}
 						</Typography>
 					</div>
-				))}
+				))} */}
 			</div>
 		</div>
 	);
