@@ -1,15 +1,8 @@
-import {
-	faInstagram,
-	faLinkedin,
-	faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar, Typography } from "@mui/joy";
 
-import Liad from "../../assets/liad.png";
-import { PropsWithChildren } from "react";
 import { ContactLinks } from "sections/contact/Contact";
+
+import Liad from "../../assets/liad.png";
 
 export const Author = () => {
 	return (

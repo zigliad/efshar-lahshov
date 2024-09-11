@@ -5,10 +5,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Divider, Typography } from "@mui/joy";
-import React, { PropsWithChildren } from "react";
+import { Typography } from "@mui/joy";
+import { PropsWithChildren } from "react";
 
-const Mailto = ({
+export const Mailto = ({
 	email,
 	subject = "",
 	body = "",
@@ -24,7 +24,11 @@ const Mailto = ({
 export const ContactLinks = () => {
 	return (
 		<div className="flex gap-6 my-4 flex-row-reverse">
-			<a href="http://instagram.com/liad_zigdon/" target="_blank">
+			<a
+				href="http://instagram.com/liad_zigdon/"
+				target="_blank"
+				rel="noreferrer"
+			>
 				<FontAwesomeIcon
 					icon={faInstagram}
 					size="2xl"
@@ -34,6 +38,7 @@ export const ContactLinks = () => {
 			<a
 				href="https://www.linkedin.com/in/liad-zigdon-4157a41ba/"
 				target="_blank"
+				rel="noreferrer"
 			>
 				<FontAwesomeIcon
 					icon={faLinkedin}
@@ -44,6 +49,7 @@ export const ContactLinks = () => {
 			<a
 				href="https://api.whatsapp.com/send?phone=+972545200172"
 				target="_blank"
+				rel="noreferrer"
 			>
 				<FontAwesomeIcon
 					icon={faWhatsapp}

@@ -26,7 +26,7 @@
 
 @media (min-width: 600px) {
 	.book {
-		scale: 1.4;
+		/* scale: 1.4; */
 	}
 }
 
