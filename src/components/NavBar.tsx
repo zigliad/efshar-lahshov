@@ -11,7 +11,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import * as React from "react";
 import { RefObject } from "react";
-import { Mailto } from "sections/contact/Contact";
+import {
+	MAIL_LILIZIGI,
+	MAIL_ZIGDONLIAD,
+	Mailto,
+} from "sections/contact/Contact";
 
 const Hamburger = ({
 	pages,
@@ -108,8 +112,8 @@ export const NavBar = ({
 					>
 						<Tooltip title="לרכישת הספר">
 							<Mailto
-								email="zigdonliad@gmail.com"
-								bcc="lilizigi@gmailc.com"
+								email={MAIL_ZIGDONLIAD}
+								bcc={MAIL_LILIZIGI}
 								subject="אפשר לחשוב"
 								body={`שלום!\nאשמח להזמין עותק של הספר ״אפשר לחשוב״!`}
 							>

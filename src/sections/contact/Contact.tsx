@@ -8,6 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Typography } from "@mui/joy";
 import { PropsWithChildren } from "react";
 
+export const MAIL_LILIZIGI = "lilizigi@gmail.com";
+export const MAIL_ZIGDONLIAD = "zigdonliad@gmail.com";
+
 export const Mailto = ({
 	email,
 	bcc = "",
@@ -65,8 +68,8 @@ export const ContactLinks = () => {
 				/>
 			</a>
 			<Mailto
-				email="zigdonliad@gmail.com"
-				bcc="lilizigi@gmail.com"
+				email={MAIL_ZIGDONLIAD}
+				bcc={MAIL_LILIZIGI}
 				subject="אפשר לחשוב"
 				body={`שלום!\nאשמח להזמין עותק של הספר ״אפשר לחשוב״!`}
 			>
