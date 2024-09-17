@@ -11,11 +11,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import * as React from "react";
 import { RefObject } from "react";
-import {
-	MAIL_LILIZIGI,
-	MAIL_ZIGDONLIAD,
-	Mailto,
-} from "sections/contact/Contact";
+import { BuyMailto } from "sections/contact/Contact";
 
 const Hamburger = ({
 	pages,
@@ -111,19 +107,14 @@ export const NavBar = ({
 						flexDirection={"row"}
 					>
 						<Tooltip title="לרכישת הספר">
-							<Mailto
-								email={MAIL_ZIGDONLIAD}
-								bcc={MAIL_LILIZIGI}
-								subject="אפשר לחשוב"
-								body={`שלום!\nאשמח להזמין עותק של הספר ״אפשר לחשוב״!`}
-							>
+							<BuyMailto>
 								<IconButton
 									size="large"
 									style={{ color: "black" }}
 								>
 									<ShoppingBagOutlinedIcon />
 								</IconButton>
-							</Mailto>
+							</BuyMailto>
 						</Tooltip>
 						<Hamburger pages={pages} />
 					</Box>

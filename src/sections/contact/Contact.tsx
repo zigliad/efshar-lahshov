@@ -1,3 +1,4 @@
+import { PropsOf } from "@emotion/react";
 import {
 	faInstagram,
 	faLinkedin,
@@ -30,6 +31,17 @@ export const Mailto = ({
 
 	return <a href={`mailto:${email}${params}`}>{children}</a>;
 };
+
+export const BuyMailto = ({ children }: PropsWithChildren<{}>) => (
+	<Mailto
+		email={MAIL_ZIGDONLIAD}
+		bcc={MAIL_LILIZIGI}
+		subject="אפשר לחשוב"
+		body={`שלום!\nאשמח להזמין עותק של הספר ״אפשר לחשוב״!\n\n\n`}
+	>
+		{children}
+	</Mailto>
+);
 
 export const ContactLinks = () => {
 	return (
@@ -67,18 +79,13 @@ export const ContactLinks = () => {
 					style={{ color: "#128C7E" }}
 				/>
 			</a>
-			<Mailto
-				email={MAIL_ZIGDONLIAD}
-				bcc={MAIL_LILIZIGI}
-				subject="אפשר לחשוב"
-				body={`שלום!\nאשמח להזמין עותק של הספר ״אפשר לחשוב״!`}
-			>
+			<BuyMailto>
 				<FontAwesomeIcon
 					icon={faEnvelope}
 					size="2xl"
 					style={{ color: "#f2870e" }}
 				/>
-			</Mailto>
+			</BuyMailto>
 		</div>
 	);
 };
