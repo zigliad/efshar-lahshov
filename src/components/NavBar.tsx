@@ -106,15 +106,17 @@ export const NavBar = ({
 						display={"flex"}
 						flexDirection={"row"}
 					>
-						<Tooltip title="לרכישת הספר">
-							<BuyMailto>
-								<IconButton
-									size="large"
-									style={{ color: "black" }}
-								>
-									<ShoppingBagOutlinedIcon />
-								</IconButton>
-							</BuyMailto>
+						<Tooltip title="לרכישת הספר" arrow>
+							<div>
+								<BuyMailto>
+									<IconButton
+										size="large"
+										style={{ color: "black" }}
+									>
+										<ShoppingBagOutlinedIcon />
+									</IconButton>
+								</BuyMailto>
+							</div>
 						</Tooltip>
 						<Hamburger pages={pages} />
 					</Box>
