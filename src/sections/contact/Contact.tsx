@@ -1,4 +1,3 @@
-import { PropsOf } from "@emotion/react";
 import {
 	faInstagram,
 	faLinkedin,
