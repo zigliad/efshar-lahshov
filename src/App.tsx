@@ -1,3 +1,7 @@
+import { StyledEngineProvider } from "@mui/material/styles";
+import { useRef } from "react";
+
+import { NavBar } from "components/NavBar";
 import { Author } from "sections/about-the-author/Author";
 import { AboutTheBook } from "sections/about-the-book/AboutTheBook";
 import { BookCover } from "sections/book-cover/BookCover";
@@ -8,53 +12,64 @@ import { Reviews } from "sections/reviews/Reviews";
 import "./styles/book.css";
 import "./styles/main.css";
 import "@fontsource/inter";
-import { NavBar } from "components/NavBar";
-import { lime, purple } from "@mui/material/colors";
-import { ThemeProvider } from "@mui/joy/styles";
-import { createTheme } from "@mui/material/styles";
-
-const theme = createTheme({});
 
 function App() {
+	const aboutRef = useRef<HTMLDivElement>(null);
+	const authorRef = useRef<HTMLDivElement>(null);
+	const openingWordsRef = useRef<HTMLDivElement>(null);
+	const reviewsRef = useRef<HTMLDivElement>(null);
+	const contactRef = useRef<HTMLDivElement>(null);
+
 	return (
-		<div className="">
-			<NavBar />
-			<div className="section-outer justify-center h-[70vh]">
-				<div className="section-inner">
-					<BookCover />
-				</div>
-			</div>
+		<StyledEngineProvider injectFirst>
+			<div className="">
+				<NavBar
+					pages={[
+						{ title: "על הספר", ref: aboutRef },
+						{ title: "על המחבר", ref: authorRef },
+						{ title: "מילות פתיחה", ref: openingWordsRef },
+						{ title: "תגובות", ref: reviewsRef },
+						{ title: "צרו קשר", ref: contactRef },
+					]}
+				/>
 
-			<div className="section-outer">
-				<div className="section-inner">
-					<AboutTheBook />
+				<div className="section-outer justify-center h-[70vh]">
+					<div className="section-inner">
+						<BookCover />
+					</div>
 				</div>
-			</div>
 
-			<div className="section-outer">
-				<div className="section-inner">
-					<Author />
+				<div className="section-outer" ref={aboutRef}>
+					<div className="section-inner">
+						<AboutTheBook />
+					</div>
 				</div>
-			</div>
 
-			<div className="section-outer">
-				<div className="section-inner">
-					<OpeningWords />
+				<div className="section-outer" ref={authorRef}>
+					<div className="section-inner">
+						<Author />
+					</div>
 				</div>
-			</div>
 
-			<div className="section-outer">
-				<div className="section-inner">
-					<Reviews />
+				<div className="section-outer" ref={openingWordsRef}>
+					<div className="section-inner">
+						<OpeningWords />
+					</div>
 				</div>
-			</div>
 
-			<div className="section-outer">
-				<div className="section-inner">
-					<Contact />
+				<div className="section-outer" ref={reviewsRef}>
+					<div className="section-inner">
+						<Reviews />
+					</div>
+				</div>
+
+				<div className="section-outer" ref={contactRef}>
+					<div className="section-inner">
+						<Contact />
+					</div>
 				</div>
 			</div>
-		</div>
+		</StyledEngineProvider>
 	);
 }
 

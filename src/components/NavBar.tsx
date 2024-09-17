@@ -1,24 +1,23 @@
-import * as React from "react";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import { Typography } from "@mui/joy";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
+import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
-
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import { Typography } from "@mui/joy";
+import Toolbar from "@mui/material/Toolbar";
+import Tooltip from "@mui/material/Tooltip";
+import * as React from "react";
+import { RefObject } from "react";
 import { Mailto } from "sections/contact/Contact";
 
-const pages = ["על הספר", "על המחבר", "מילות פתיחה", "תגובות", "צרו קשר"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-const Hamburger = ({ position }: { position: "right" | "left" }) => {
+const Hamburger = ({
+	pages,
+}: {
+	pages: { title: string; ref: RefObject<HTMLDivElement> }[];
+}) => {
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
 		null
 	);
@@ -27,23 +26,21 @@ const Hamburger = ({ position }: { position: "right" | "left" }) => {
 		setAnchorElNav(event.currentTarget);
 	};
 
-	const handleCloseNavMenu = () => {
+	const handleCloseNavMenu = (ref: RefObject<HTMLDivElement>) => {
+		ref.current?.scrollIntoView();
 		setAnchorElNav(null);
 	};
 	return (
 		<Box
 			sx={{
 				flexGrow: 1,
-				display: {
-					xs: position === "right" ? "flex" : "none",
-					md: position === "left" ? "flex" : "none",
-				},
+				display: "flex",
 			}}
 		>
 			<IconButton
 				size="large"
 				onClick={handleOpenNavMenu}
-				style={{ color: "#5468d5" }}
+				style={{ color: "black" }}
 			>
 				<MenuRoundedIcon />
 			</IconButton>
@@ -64,9 +61,13 @@ const Hamburger = ({ position }: { position: "right" | "left" }) => {
 				sx={{ display: "block" }}
 			>
 				{pages.map((page) => (
-					<MenuItem key={page} onClick={handleCloseNavMenu} dir="rtl">
+					<MenuItem
+						key={page.title}
+						onClick={() => handleCloseNavMenu(page.ref)}
+						dir="rtl"
+					>
 						<Typography sx={{ textAlign: "center" }}>
-							{page}
+							{page.title}
 						</Typography>
 					</MenuItem>
 				))}
@@ -75,68 +76,52 @@ const Hamburger = ({ position }: { position: "right" | "left" }) => {
 	);
 };
 
-export const NavBar = () => {
+export const NavBar = ({
+	pages,
+}: {
+	pages: { title: string; ref: RefObject<HTMLDivElement> }[];
+}) => {
 	return (
 		<AppBar position="sticky" dir="rtl" style={{ backgroundColor: "#fff" }}>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
-					<Hamburger position="left" />
 					<Typography
 						level="h2"
 						sx={{
 							mr: 2,
-							display: { xs: "none", md: "flex" },
 							fontWeight: 700,
-							color: "#5468d5",
 						}}
-					>
-						אפשר לחשוב
-					</Typography>
-					<Hamburger position="right" />
-					<Typography
-						level="h2"
-						sx={{
-							mr: 2,
-							display: { xs: "flex", md: "none" },
-							flexGrow: 1,
-							fontWeight: 700,
-							color: "#5468d5",
-						}}
+						className="bg-gradient-to-bl from-[#4568dc] to-[#b07cec] inline-block text-transparent bg-clip-text"
 					>
 						אפשר לחשוב
 					</Typography>
 					<Box
 						sx={{
 							flexGrow: 1,
-							display: { xs: "none", md: "flex" },
 						}}
 						className="flex justify-center"
+					/>
+					<Box
+						sx={{ flexGrow: 0 }}
+						display={"flex"}
+						flexDirection={"row"}
 					>
-						{/* {pages.map((page) => (
-							<Button
-								key={page}
-								onClick={handleCloseNavMenu}
-								sx={{ my: 2, color: "#5468d5" }}
-							>
-								{page}
-							</Button>
-						))} */}
-					</Box>
-					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="לרכישת הספר">
 							<Mailto
 								email="zigdonliad@gmail.com"
+								bcc="lilizigi@gmailc.com"
 								subject="אפשר לחשוב"
 								body={`שלום!\nאשמח להזמין עותק של הספר ״אפשר לחשוב״!`}
 							>
 								<IconButton
 									size="large"
-									style={{ color: "#5468d5" }}
+									style={{ color: "black" }}
 								>
-									<ShoppingCartRoundedIcon />
+									<ShoppingBagOutlinedIcon />
 								</IconButton>
 							</Mailto>
 						</Tooltip>
+						<Hamburger pages={pages} />
 					</Box>
 				</Toolbar>
 			</Container>

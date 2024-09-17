@@ -10,13 +10,20 @@ import { PropsWithChildren } from "react";
 
 export const Mailto = ({
 	email,
+	bcc = "",
 	subject = "",
 	body = "",
 	children,
-}: PropsWithChildren<{ email: string; subject: string; body: string }>) => {
+}: PropsWithChildren<{
+	email: string;
+	bcc?: string;
+	subject: string;
+	body: string;
+}>) => {
 	let params = subject || body ? "?" : "";
 	if (subject) params += `subject=${encodeURIComponent(subject)}`;
-	if (body) params += `${subject ? "&" : ""}body=${encodeURIComponent(body)}`;
+	if (bcc) params += `${subject ? "&" : ""}bcc=${encodeURIComponent(bcc)}`;
+	if (body) params += `${bcc ? "&" : ""}body=${encodeURIComponent(body)}`;
 
 	return <a href={`mailto:${email}${params}`}>{children}</a>;
 };
@@ -59,6 +66,7 @@ export const ContactLinks = () => {
 			</a>
 			<Mailto
 				email="zigdonliad@gmail.com"
+				bcc="lilizigi@gmail.com"
 				subject="אפשר לחשוב"
 				body={`שלום!\nאשמח להזמין עותק של הספר ״אפשר לחשוב״!`}
 			>
@@ -87,7 +95,7 @@ export const Contact = () => {
 			</Typography>
 			<ContactLinks />
 			<Typography textAlign={"right"} fontSize={"1.15rem"} dir="rtl">
-				אפשר לחשוב - ליעד זיגדון
+				אפשר לחשוב - ליעד זיגדון ©️
 			</Typography>
 		</div>
 	);

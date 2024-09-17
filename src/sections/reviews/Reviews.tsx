@@ -1,4 +1,4 @@
-import { Typography } from "@mui/joy";
+import { Box, Typography } from "@mui/joy";
 import { Masonry } from "@mui/lab";
 import React from "react";
 
@@ -61,6 +61,35 @@ const reviews = [
 // 	},
 // ];
 
+const ReviewsMap = () => {
+	return (
+		<>
+			{reviews.map((review, index) => (
+				<div
+					key={index}
+					className={"bg-white rounded-xl p-4"}
+					dir="rtl"
+				>
+					<Typography
+						level="h4"
+						textAlign={"right"}
+						className="bg-gradient-to-bl from-[#4568dc] to-[#b07cec] inline-block text-transparent bg-clip-text"
+					>
+						{review.reviewer}
+					</Typography>
+					<Typography
+						textAlign={"right"}
+						fontSize={"1.15rem"}
+						dir="rtl"
+					>
+						{review.message}
+					</Typography>
+				</div>
+			))}
+		</>
+	);
+};
+
 export const Reviews = () => {
 	return (
 		<div>
@@ -74,59 +103,21 @@ export const Reviews = () => {
 			<Typography textAlign={"right"} level="h1" gutterBottom>
 				תגובות הפותרים והקוראים
 			</Typography>
-			<div className="space-y-4">
+			<Box display={{ xs: "flex", md: "none" }}>
+				<div className={"space-y-4 w-full"}>
+					<ReviewsMap />
+				</div>
+			</Box>
+			<Box display={{ xs: "none", md: "flex" }}>
 				<Masonry
 					columns={{ xs: 1, md: 2, lg: 3 }}
 					spacing={3}
 					dir="rtl"
 					style={{ marginLeft: 12 }}
 				>
-					{reviews.map((review, index) => (
-						<div
-							key={index}
-							className="bg-white rounded-xl bg-white p-4"
-						>
-							<Typography
-								textAlign={"right"}
-								level="h4"
-								dir="rtl"
-								textColor={"#5468d5"}
-							>
-								{review.reviewer}
-							</Typography>
-							<Typography
-								textAlign={"right"}
-								fontSize={"1.15rem"}
-								dir="rtl"
-							>
-								{review.message}
-							</Typography>
-						</div>
-					))}
+					<ReviewsMap />
 				</Masonry>
-				{/* {reviews.map((review, index) => (
-					<div
-						key={index}
-						className="bg-white rounded-xl rounded-br-none p-4"
-					>
-						<Typography
-							textAlign={"right"}
-							level="h4"
-							dir="rtl"
-							textColor={"#5468d5"}
-						>
-							{review.reviewer}
-						</Typography>
-						<Typography
-							textAlign={"right"}
-							fontSize={"1.15rem"}
-							dir="rtl"
-						>
-							{review.message}
-						</Typography>
-					</div>
-				))} */}
-			</div>
+			</Box>
 		</div>
 	);
 };

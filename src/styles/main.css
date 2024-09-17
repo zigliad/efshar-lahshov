@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 .section-outer {
 	padding: 4rem;
 	flex-direction: column;
