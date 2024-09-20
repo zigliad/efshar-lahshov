@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/efshar-lahshov/static/css/main.8924a2fb.css",
+    "main.css": "/efshar-lahshov/static/css/main.20cc393f.css",
     "main.js": "/efshar-lahshov/static/js/main.0c155a0b.js",
     "static/media/liad.png": "/efshar-lahshov/static/media/liad.3a8b5a5266ac91af0f7d.png",
     "static/media/cover.png": "/efshar-lahshov/static/media/cover.82a1c141209274a7a045.png",
@@ -19,11 +19,11 @@
     "static/media/inter-greek-ext-400-normal.woff2": "/efshar-lahshov/static/media/inter-greek-ext-400-normal.f2fa0d9ef98f59d4a75b.woff2",
     "static/media/inter-vietnamese-400-normal.woff2": "/efshar-lahshov/static/media/inter-vietnamese-400-normal.44c9df135eec470b0ab6.woff2",
     "index.html": "/efshar-lahshov/index.html",
-    "main.8924a2fb.css.map": "/efshar-lahshov/static/css/main.8924a2fb.css.map",
+    "main.20cc393f.css.map": "/efshar-lahshov/static/css/main.20cc393f.css.map",
     "main.0c155a0b.js.map": "/efshar-lahshov/static/js/main.0c155a0b.js.map"
   },
   "entrypoints": [
-    "static/css/main.8924a2fb.css",
+    "static/css/main.20cc393f.css",
     "static/js/main.0c155a0b.js"
   ]
 }
