@@ -9,9 +9,10 @@ import { Contact } from "sections/contact/Contact";
 import { OpeningWords } from "sections/opening-words/OpeningWords";
 import { Reviews } from "sections/reviews/Reviews";
 
+import "@fontsource/inter";
+import { BuyTheBook } from "sections/buy-the-book/BuyTheBook";
 import "./styles/book.css";
 import "./styles/main.css";
-import "@fontsource/inter";
 
 function App() {
 	const aboutRef = useRef<HTMLDivElement>(null);
@@ -19,22 +20,25 @@ function App() {
 	const openingWordsRef = useRef<HTMLDivElement>(null);
 	const reviewsRef = useRef<HTMLDivElement>(null);
 	const contactRef = useRef<HTMLDivElement>(null);
+	const buyTheBookRef = useRef<HTMLDivElement>(null);
 
 	return (
 		<StyledEngineProvider injectFirst>
 			<div className="">
 				<NavBar
+					buyTheBookRef={buyTheBookRef}
 					pages={[
 						{ title: "על הספר", ref: aboutRef },
 						{ title: "על המחבר", ref: authorRef },
 						{ title: "מילות פתיחה", ref: openingWordsRef },
 						{ title: "תגובות", ref: reviewsRef },
+						{ title: "לרכישת הספר", ref: buyTheBookRef },
 						{ title: "צרו קשר", ref: contactRef },
 					]}
 				/>
 
 				<div className="section-outer justify-center h-[70vh]">
-					<div className="section-inner">
+					<div className="section-inner items-center flex flex-col space-y-16">
 						<BookCover />
 					</div>
 				</div>
@@ -60,6 +64,12 @@ function App() {
 				<div className="section-outer" ref={reviewsRef}>
 					<div className="section-inner">
 						<Reviews />
+					</div>
+				</div>
+
+				<div className="section-outer" ref={buyTheBookRef}>
+					<div className="section-inner">
+						<BuyTheBook />
 					</div>
 				</div>
 

@@ -30,6 +30,7 @@ const Hamburger = ({
 		ref.current?.scrollIntoView();
 		setAnchorElNav(null);
 	};
+
 	return (
 		<Box
 			sx={{
@@ -77,8 +78,10 @@ const Hamburger = ({
 };
 
 export const NavBar = ({
+	buyTheBookRef,
 	pages,
 }: {
+	buyTheBookRef: RefObject<HTMLDivElement>;
 	pages: { title: string; ref: RefObject<HTMLDivElement> }[];
 }) => {
 	return (
@@ -108,14 +111,15 @@ export const NavBar = ({
 					>
 						<Tooltip title="לרכישת הספר" arrow>
 							<div>
-								<BuyMailto>
-									<IconButton
-										size="large"
-										style={{ color: "black" }}
-									>
-										<ShoppingBagOutlinedIcon />
-									</IconButton>
-								</BuyMailto>
+								<IconButton
+									size="large"
+									style={{ color: "black" }}
+									onClick={() => {
+										buyTheBookRef.current?.scrollIntoView();
+									}}
+								>
+									<ShoppingBagOutlinedIcon />
+								</IconButton>
 							</div>
 						</Tooltip>
 						<Hamburger pages={pages} />
