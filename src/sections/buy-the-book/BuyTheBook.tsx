@@ -1,5 +1,5 @@
 import { Button, Typography } from "@mui/joy";
-import { BuyMailto } from "sections/contact/Contact";
+import { BuyWhatsapp } from "sections/contact/Contact";
 
 export const BuyTheBook = () => {
 	return (
@@ -28,14 +28,14 @@ export const BuyTheBook = () => {
 				רוצים להוסיף טאץ' אישי? תוכלו לבקש הקדשה מיוחדת או אפילו הגדרה
 				בהתאמה אישית – בדיוק עבורכם!
 			</Typography>
-			<BuyMailto>
+			<BuyWhatsapp>
 				<Button
 					size="lg"
 					className="mt-6 bg-gradient-to-bl from-[#4568dc] to-[#b07cec] hover:shadow-xl transition transform duration-200"
 				>
 					לרכישת הספר
 				</Button>
-			</BuyMailto>
+			</BuyWhatsapp>
 		</div>
 	);
 };

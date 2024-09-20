@@ -31,16 +31,33 @@ export const Mailto = ({
 	return <a href={`mailto:${email}${params}`}>{children}</a>;
 };
 
+const BUY_TEXT = `
+שלום ליעד! \n
+אשמח להזמין עותק של הספר ״אפשר לחשוב״ 🧠\n
+`;
+
 export const BuyMailto = ({ children }: PropsWithChildren<{}>) => (
 	<Mailto
 		email={MAIL_ZIGDONLIAD}
 		bcc={MAIL_LILIZIGI}
 		subject="אפשר לחשוב"
-		body={`שלום!\nאשמח להזמין עותק של הספר ״אפשר לחשוב״!\n\n\n`}
+		body={BUY_TEXT}
 	>
 		{children}
 	</Mailto>
 );
+
+export const BuyWhatsapp = ({ children }: PropsWithChildren<{}>) => {
+	return (
+		<a
+			href={`https://wa.me/972545200172?text=${BUY_TEXT}`}
+			target="_blank"
+			rel="noreferrer"
+		>
+			{children}
+		</a>
+	);
+};
 
 export const ContactLinks = () => {
 	return (
@@ -67,17 +84,13 @@ export const ContactLinks = () => {
 					style={{ color: "#0b63bc" }}
 				/>
 			</a>
-			<a
-				href="https://api.whatsapp.com/send?phone=+972545200172"
-				target="_blank"
-				rel="noreferrer"
-			>
+			<BuyWhatsapp>
 				<FontAwesomeIcon
 					icon={faWhatsapp}
 					size="2xl"
 					style={{ color: "#128C7E" }}
 				/>
-			</a>
+			</BuyWhatsapp>
 			<BuyMailto>
 				<FontAwesomeIcon
 					icon={faEnvelope}
