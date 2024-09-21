@@ -24,9 +24,11 @@
 	animation: 3s ease 0s 1 initAnimation;
 }
 
-.book-container:hover .book,
-.book-container:focus .book {
-	transform: rotateY(0deg);
+@media (min-width: 800px) {
+	.book-container:hover .book,
+	.book-container:focus .book {
+		transform: rotateY(0deg);
+	}
 }
 
 .book > :first-child {
